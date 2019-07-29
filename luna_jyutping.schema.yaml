@@ -12,9 +12,9 @@ schema:
     http://www.lshk.org/cantonese.php
     簡拼輸入
     聲母  ng  gw  kw
-    按鍵   q   x   i
+    按鍵   q   y   i
     韻母  aa  oe  eo  yu  ng
-    按鍵   r   v   f   y   q
+    按鍵   r   x   v   y   q
   dependencies:
     - luna_pinyin
 
@@ -59,11 +59,11 @@ speller:
   algebra:
     - derive/^([a-z]+)[1-6]$/$1/ # 聲調略寫
     - xform/ng/q/                # ng => q
-    - xform/gw/x/                # gw => x
+    - xform/gw/y/                # gw => y
     - xform/kw/i/                # kw => i
     - xform/aa/r/                # aa => r
-    - xform/oe/v/                # oe => v
-    - xform/eo/f/                # eo => f
+    - xform/oe/x/                # oe => x
+    - xform/eo/v/                # eo => v
     - xform/yu/y/                # yu => y
     - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
 
@@ -72,11 +72,11 @@ translator:
   spelling_hints: 5
   preedit_format:
     - xform/q/ng/                # q => ng
-    - xform/x/gw/                # x => gw
-    - xform/i([aiuor])/kw$1/     # i => kw
+    - xform/y([aeiour])/gw$1/    # y => gw
+    - xform/i([aeiour])/kw$1/    # i => kw
     - xform/r/aa/                # r => aa
-    - xform/v/oe/                # v => oe
-    - xform/f([tin])/eo$1/       # f => eo
+    - xform/x/oe/                # x => oe
+    - xform/v/eo/                # v => eo
     - xform/y/yu/                # y => yu
 
 reverse_lookup:
