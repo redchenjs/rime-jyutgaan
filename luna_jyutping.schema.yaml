@@ -72,8 +72,10 @@ translator:
   spelling_hints: 5
   preedit_format:
     - xform/q/ng/                # q => ng
-    - xform/y([aeiour])/gw$1/    # y => gw
-    - xform/i([aeiour])/kw$1/    # i => kw
+    - xform/^y([aeiour])/gw$1/   # y => gw
+    - xform/ y([aeiour])/ gw$1/  # y => gw
+    - xform/^i([aeiour])/kw$1/   # i => kw
+    - xform/ i([aeiour])/ kw$1/  # i => kw
     - xform/r/aa/                # r => aa
     - xform/x/oe/                # x => oe
     - xform/v/eo/                # v => eo
