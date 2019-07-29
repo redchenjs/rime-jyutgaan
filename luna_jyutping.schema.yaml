@@ -12,9 +12,9 @@ schema:
     http://www.lshk.org/cantonese.php
     簡拼輸入
     聲母  ng  gw  kw
-    按鍵   x   v   q
+    按鍵   q   x   i
     韻母  aa  oe  eo  yu  ng
-    按鍵   r   j   f   y   b
+    按鍵   r   v   f   y   q
   dependencies:
     - luna_pinyin
 
@@ -58,31 +58,26 @@ speller:
   delimiter: " '"
   algebra:
     - derive/^([a-z]+)[1-6]$/$1/ # 聲調略寫
-    - xform/^ng([a-z])/x$1/      # 簡拼
-    - xform/^gw([a-z])/v$1/      # 簡拼
-    - xform/^kw([a-z])/q$1/      # 簡拼
-    - xform/^aa([a-z])/r$1/      # 簡拼
-    - xform/^oe([a-z])/j$1/      # 簡拼
-    - xform/^eo([a-z])/f$1/      # 簡拼
-    - xform/([a-z])aa/$1r/       # 簡拼
-    - xform/([a-z])oe/$1j/       # 簡拼
-    - xform/([a-z])eo/$1f/       # 簡拼
-    - xform/yu/y/                # 簡拼
-    - xform/([a-z])ng/$1b/       # 簡拼
+    - xform/ng/q/                # ng => q
+    - xform/gw/x/                # gw => x
+    - xform/kw/i/                # kw => i
+    - xform/aa/r/                # aa => r
+    - xform/oe/v/                # oe => v
+    - xform/eo/f/                # eo => f
+    - xform/yu/y/                # yu => y
     - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
 
 translator:
   dictionary: luna_jyutping
   spelling_hints: 5
   preedit_format:
-    - xform/x/ng/                # 簡拼
-    - xform/v/gw/                # 簡拼
-    - xform/q/kw/                # 簡拼
-    - xform/r/aa/                # 簡拼
-    - xform/j([tkb])/oe$1/       # 簡拼
-    - xform/f([tkin])/eo$1/      # 簡拼
-    - xform/y/yu/                # 簡拼
-    - xform/([aeiou])b/$1ng/     # 簡拼
+    - xform/q/ng/                # q => ng
+    - xform/x/gw/                # x => gw
+    - xform/i([aiuor])/kw$1/     # i => kw
+    - xform/r/aa/                # r => aa
+    - xform/v/oe/                # v => oe
+    - xform/f([tin])/eo$1/       # f => eo
+    - xform/y/yu/                # y => yu
 
 reverse_lookup:
   dictionary: luna_pinyin
