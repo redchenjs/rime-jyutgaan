@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: simple_jyutping
-  name: 簡式粵拼
+  schema_id: luna_jyutping
+  name: 朙月粵拼
   version: "1.0"
   author:
     - Jack Chen <redchenjs@live.com>
@@ -58,9 +58,9 @@ speller:
   delimiter: " '"
   algebra:
     - derive/^([a-z]+)[1-6]$/$1/ # 聲調略寫
-    - xform/^ng/x/               # 簡拼
-    - xform/^gw/v/               # 簡拼
-    - xform/^kw/q/               # 簡拼
+    - xform/^ng([a-z])/x$1/      # 簡拼
+    - xform/^gw([a-z])/v$1/      # 簡拼
+    - xform/^kw([a-z])/q$1/      # 簡拼
     - xform/^aa([a-z])/r$1/      # 簡拼
     - xform/^oe([a-z])/j$1/      # 簡拼
     - xform/^eo([a-z])/f$1/      # 簡拼
@@ -72,7 +72,7 @@ speller:
     - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
 
 translator:
-  dictionary: simple_jyutping
+  dictionary: luna_jyutping
   spelling_hints: 5
   preedit_format:
     - xform/x/ng/                # 簡拼

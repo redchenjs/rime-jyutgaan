@@ -1,6 +1,6 @@
-# 簡式粵拼
+# 朙月粵拼
 
-配方： ℞ **simple-jyutping**
+配方： ℞ **luna-jyutping**
 
 [Rime](https://rime.im) 粵拼輸入方案（簡拼版）
 
@@ -16,7 +16,9 @@
 | :--: | -: | -: | -: | -: | -: |
 | 按鍵 |  r |  j |  f |  y | b |
 
-注：無聲母且無韻尾的單音如o，e，aa，oe直接鍵入，其餘音依照上述規則進行替換。
+註：
+* 無聲調輸入，但會顯示帶調註音（僅用於參考，多音字註音可能有誤）。
+* 除aa，oe，ng三個單音需直接鍵入外，其餘音（包括含前述三個音的其他組合）均依照上述規則進行替換。
 
 ## 依賴
 
@@ -26,7 +28,7 @@
 
 [東風破](https://github.com/rime/plum) 安裝口令：
 ```
-bash rime-install redchenjs/rime-simple-jyutping
+bash rime-install redchenjs/rime-luna-jyutping
 ```
 
 授權條款：見 [LICENSE](LICENSE)

@@ -1,7 +1,7 @@
 # Rime dictionary
 # encoding: utf-8
 #
-# Simple Jyutping - 簡式粵拼
+# Luna Jyutping - 朙月粵拼
 #
 # referenced works:
 # 開放詞典 (Open Dictionary)
@@ -12,7 +12,7 @@
 # https://creativecommons.org/licenses/by/3.0/
 
 ---
-name: simple_jyutping
+name: luna_jyutping
 version: "2019.06.23"
 sort: by_weight
 use_preset_vocabulary: true
