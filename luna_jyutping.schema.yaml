@@ -73,8 +73,10 @@ translator:
   preedit_format:
     - xform/q/ng/                # q => ng
     - xform/^y/gw$1/             # y => gw
+    - xform/'y/'gw$1/            # y => gw
     - xform/ y/ gw$1/            # y => gw
     - xform/^i/kw$1/             # i => kw
+    - xform/'i/'kw$1/            # i => kw
     - xform/ i/ kw$1/            # i => kw
     - xform/r/aa/                # r => aa
     - xform/x/oe/                # x => oe
