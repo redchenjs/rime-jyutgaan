@@ -68,7 +68,7 @@ speller:
     - xform/([a-z])oe/$1j/       # 簡拼
     - xform/([a-z])eo/$1f/       # 簡拼
     - xform/yu/y/                # 簡拼
-    - xform/([aeiou])ng/$1b/     # 簡拼
+    - xform/([a-z])ng/$1b/       # 簡拼
     - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
 
 translator:
