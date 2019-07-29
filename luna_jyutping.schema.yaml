@@ -59,8 +59,8 @@ speller:
   algebra:
     - derive/^([a-z]+)[1-6]$/$1/ # 聲調略寫
     - xform/ng/q/                # ng => q
-    - xform/gw/y/                # gw => y
-    - xform/kw/i/                # kw => i
+    - xform/^gw/y/               # gw => y
+    - xform/^kw/i/               # kw => i
     - xform/aa/r/                # aa => r
     - xform/oe/x/                # oe => x
     - xform/eo/v/                # eo => v
