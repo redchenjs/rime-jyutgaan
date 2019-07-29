@@ -10,7 +10,7 @@ schema:
   description: |
     採用香港語言學會粵語拼音方案
     http://www.lshk.org/cantonese.php
-    簡式輸入（簡拼）
+    簡拼輸入
     聲母  ng  gw  kw
     按鍵   x   v   q
     韻母  aa  oe  eo  yu  ng
