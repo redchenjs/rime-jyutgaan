@@ -1,0 +1,107 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: simple_jyutping
+  name: 簡式粵拼
+  version: "1.0"
+  author:
+    - Jack Chen <redchenjs@live.com>
+  description: |
+    採用香港語言學會粵語拼音方案
+    http://www.lshk.org/cantonese.php
+    簡式輸入（簡拼）
+    聲母  ng  gw  kw
+    按鍵   x   v   q
+    韻母  aa  oe  eo  yu  ng
+    按鍵   r   j   f   y   b
+  dependencies:
+    - terra_jyutping
+    - luna_pinyin
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: simplification
+    states: [ 漢字, 汉字 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+    - reverse_lookup_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  algebra:
+    - derive/^([a-z]+)[1-6]$/$1/ # 聲調略寫
+    - xform/^ng/x/               # 簡拼
+    - xform/^gw/v/               # 簡拼
+    - xform/^kw/q/               # 簡拼
+    - xform/^aa([a-z])/r$1/      # 簡拼
+    - xform/^oe([a-z])/j$1/      # 簡拼
+    - xform/^eo([a-z])/f$1/      # 簡拼
+    - xform/([a-z])aa/$1r/       # 簡拼
+    - xform/([a-z])oe/$1j/       # 簡拼
+    - xform/([a-z])eo/$1f/       # 簡拼
+    - xform/yu/y/                # 簡拼
+    - xform/([aeiou])ng/$1b/     # 簡拼
+    - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
+
+translator:
+  dictionary: terra_jyutping
+  spelling_hints: 5
+  preedit_format:
+    - xform/x/ng/                # 簡拼
+    - xform/v/gw/                # 簡拼
+    - xform/q/kw/                # 簡拼
+    - xform/r/aa/                # 簡拼
+    - xform/j([tkb])/oe$1/       # 簡拼
+    - xform/f([tkin])/eo$1/      # 簡拼
+    - xform/y/yu/                # 簡拼
+    - xform/([aeiou])b/$1ng/     # 簡拼
+
+reverse_lookup:
+  dictionary: luna_pinyin
+  prefix: "`"
+  suffix: "'"
+  tips: 〔拼音〕
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "`[a-z]*'?$"
