@@ -20,7 +20,6 @@
 
 ## 依賴
 
-* [地球粵拼](https://github.com/redchenjs/rime-terra-jyutping)：粵音字庫
 * [朙月拼音](https://github.com/rime/rime-luna-pinyin)：拼音反查
 
 ## 安裝

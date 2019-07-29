@@ -16,7 +16,6 @@ schema:
     韻母  aa  oe  eo  yu  ng
     按鍵   r   j   f   y   b
   dependencies:
-    - terra_jyutping
     - luna_pinyin
 
 switches:
@@ -73,7 +72,7 @@ speller:
     - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
 
 translator:
-  dictionary: terra_jyutping
+  dictionary: simple_jyutping
   spelling_hints: 5
   preedit_format:
     - xform/x/ng/                # 簡拼
