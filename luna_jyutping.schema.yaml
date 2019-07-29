@@ -64,7 +64,7 @@ speller:
     - xform/aa/r/                # aa => r
     - xform/oe/x/                # oe => x
     - xform/eo/v/                # eo => v
-    - xform/yu/y/                # yu => y
+    - xform/([a-z])yu/$1y/       # yu => y
     - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
 
 translator:
@@ -77,7 +77,7 @@ translator:
     - xform/r/aa/                # r => aa
     - xform/x/oe/                # x => oe
     - xform/v/eo/                # v => eo
-    - xform/y/yu/                # y => yu
+    - xform/([a-z])y/$1yu/       # y => yu
 
 reverse_lookup:
   dictionary: luna_pinyin
