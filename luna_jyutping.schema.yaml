@@ -12,9 +12,11 @@ schema:
     http://www.lshk.org/cantonese.php
     簡拼輸入
     聲母  ng  gw  kw
-    按鍵   q   y   i
-    韻母  aa  oe  eo  yu  ng
-    按鍵   r   x   v   y   q
+    按鍵   r   y   i
+    韻腹  aa  oe  eo  yu
+    按鍵   q   x   v   y
+    韻尾  ng
+    按鍵   r
   dependencies:
     - luna_pinyin
 
@@ -58,10 +60,10 @@ speller:
   delimiter: " '"
   algebra:
     - derive/^([a-z]+)[1-6]$/$1/ # 聲調略寫
-    - xform/ng/q/                # ng => q
+    - xform/ng/r/                # ng => r
     - xform/^gw/y/               # gw => y
     - xform/^kw/i/               # kw => i
-    - xform/aa/r/                # aa => r
+    - xform/aa/q/                # aa => q
     - xform/oe/x/                # oe => x
     - xform/eo/v/                # eo => v
     - xform/([a-z])yu/$1y/       # yu => y
@@ -71,14 +73,14 @@ translator:
   dictionary: luna_jyutping
   spelling_hints: 5
   preedit_format:
-    - xform/q/ng/                # q => ng
+    - xform/r/ng/                # r => ng
     - xform/^y/gw$1/             # y => gw
     - xform/'y/'gw$1/            # y => gw
     - xform/ y/ gw$1/            # y => gw
     - xform/^i/kw$1/             # i => kw
     - xform/'i/'kw$1/            # i => kw
     - xform/ i/ kw$1/            # i => kw
-    - xform/r/aa/                # r => aa
+    - xform/q/aa/                # q => aa
     - xform/x/oe/                # x => oe
     - xform/v/eo/                # v => eo
     - xform/([a-z])y/$1yu/       # y => yu
