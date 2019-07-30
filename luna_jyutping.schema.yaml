@@ -71,13 +71,13 @@ speller:
     - xform/eo/v/                #  eo => v
     - xform/([a-z])yu/$1y/       #  yu => y
     - xform/([a-z])ng/$1b/       # ng$ => b
-    - xform/1$/q/                #  1$ => q
-    - xform/2$/s/                #  2$ => s
-    - xform/3$/x/                #  3$ => x
-    - xform/4$/v/                #  4$ => v
-    - xform/5$/f/                #  5$ => f
-    - xform/6$/r/                #  6$ => r
     - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
+    - xform/1$/q/                # 1$ => q
+    - xform/2$/s/                # 2$ => s
+    - xform/3$/x/                # 3$ => x
+    - xform/4$/v/                # 4$ => v
+    - xform/5$/f/                # 5$ => f
+    - xform/6$/r/                # 6$ => r
 
 translator:
   dictionary: luna_jyutping
