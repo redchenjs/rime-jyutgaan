@@ -38,7 +38,7 @@
 
 [東風破](https://github.com/rime/plum) 安裝口令：
 ```
-bash rime-install redchenjs/terra-jyutping-simp
+bash rime-install redchenjs/rime-terra-jyutping-simp
 ```
 
 授權條款：見 [LICENSE](LICENSE)
