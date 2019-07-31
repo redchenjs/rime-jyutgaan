@@ -1,6 +1,6 @@
 # 地球粵拼·簡拼
 
-配方： ℞ **terra-jyutping-reduced**
+配方： ℞ **terra-jyutping-simp**
 
 [Rime](https://rime.im) 粵拼輸入方案（簡拼版）
 
@@ -38,7 +38,7 @@
 
 [東風破](https://github.com/rime/plum) 安裝口令：
 ```
-bash rime-install redchenjs/terra-jyutping-reduced
+bash rime-install redchenjs/terra-jyutping-simp
 ```
 
 授權條款：見 [LICENSE](LICENSE)
