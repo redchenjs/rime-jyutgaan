@@ -82,6 +82,7 @@ speller:
 
 translator:
   dictionary: terra_jyutping
+  prism: terra_jyutping_reduced
   spelling_hints: 5
   preedit_format:
     - xform/^q/aa/               # ^q => aa
