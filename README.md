@@ -1,6 +1,6 @@
-# 朙月粵拼
+# 地球粵拼·簡拼
 
-配方： ℞ **luna-jyutping**
+配方： ℞ **terra-jyutping-reduced**
 
 [Rime](https://rime.im) 粵拼輸入方案（簡拼版）
 
@@ -32,6 +32,7 @@
 ## 依賴
 
 * [朙月拼音](https://github.com/rime/rime-luna-pinyin)：拼音反查
+* [地球粵拼](https://github.com/redchenjs/rime-terra-jyutping)：粵音字、詞典
 
 ## 安裝
 
