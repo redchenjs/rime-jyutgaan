@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: terra_jyutping_simp
-  name: 地球粵拼·簡拼
+  schema_id: luna_jyutping
+  name: 朙月粵拼
   version: "1.1"
   author:
     - Jack Chen <redchenjs@live.com>
@@ -82,7 +82,7 @@ speller:
 
 translator:
   dictionary: terra_jyutping
-  prism: terra_jyutping_simp
+  prism: luna_jyutping
   spelling_hints: 5
   preedit_format:
     - xform/^q/aa/               # ^q => aa
