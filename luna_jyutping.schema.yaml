@@ -68,7 +68,6 @@ speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
   delimiter: " '"
   algebra:
-    - derive/^([a-z]+)[1-6]$/$1/ # 聲調略寫
     - xform/^ng/r/               # ^ng => r
     - xform/^gw/y/               # ^gw => y
     - xform/^kw/x/               # ^kw => x
@@ -78,6 +77,7 @@ speller:
     - xform/([a-z])yu/$1y/       #  yu => y
     - xform/([a-z])ng/$1b/       # ng$ => b
     - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
+    - derive/^([a-z]+)[1-6]$/$1/ # 聲調略寫
     - xform/1$/q/                # 1$ => q
     - xform/2$/s/                # 2$ => s
     - xform/3$/x/                # 3$ => x
