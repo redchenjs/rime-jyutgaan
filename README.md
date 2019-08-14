@@ -1,6 +1,6 @@
 # 朙月粵拼
 
-配方： ℞ **luna-jyutping**
+配方： ℞ **redchenjs/rime-luna-jyutping**
 
 [Rime](https://rime.im) 粵拼輸入方案（簡拼版）
 
