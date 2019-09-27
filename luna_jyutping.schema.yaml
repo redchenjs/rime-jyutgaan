@@ -66,10 +66,11 @@ speller:
   delimiter: " '"
   algebra:
     - xform/^([a-z]+)[1-6]$/\1/  # 刪除聲調
-    - xform/^ng/r/               # ^ng => r
+    - xform/^ng([a-z])/r\1/      # ^ng => r
     - xform/^gw/y/               # ^gw => y
     - xform/^kw/x/               # ^kw => x
-    - xform/aa/q/                #  aa => q
+    - xform/([a-z])aa/\1q/       #  aa => q
+    - xform/aa([a-z])/q\1/       #  aa => q
     - xform/oe/v/                #  oe => v
     - xform/eo/v/                #  eo => v
     - xform/([a-z])yu/\1y/       #  yu => y
@@ -81,21 +82,16 @@ translator:
   prism: luna_jyutping
   spelling_hints: 5
   preedit_format:
-    - xform/^q/aa/               # ^q => aa
-    - xform/^v/oe/               # ^v => oe
-    - xform/([' ])q/\1aa/        # 'q => aa
-    - xform/([' ])v/\1oe/        # 'v => oe
-    - xform/^([^eo])q/\1aa/      #  q => aa
-    - xform/^([^erom])v/\1oe/    #  v => oe
-    - xform/([' ])([^eo])q/\1\2aa/   # q => aa
-    - xform/([' ])([^erom])v/\1\2oe/ # v => oe
+    - xform/([a-z])q/\1aa/       #  q => aa
+    - xform/q([a-z])/aa\1/       # ^q => aa
+    - xform/v([a-z])/oe\1/       # ^v => oe
     - xform/oe([int])/eo\1/      # oe => eo
-    - xform/^r/ng/               # ^r => ng
-    - xform/^y/gw/               # ^y => gw
-    - xform/^x/kw/               # ^x => kw
-    - xform/([' ])r/\1ng/        # 'r => ng
-    - xform/([' ])y/\1gw/        # 'y => gw
-    - xform/([' ])x/\1kw/        # 'x => kw
+    - xform/^r([a-z])/ng\1/      # ^r => ng
+    - xform/^y([a-z])/gw\1/      # ^y => gw
+    - xform/^x([a-z])/kw\1/      # ^x => kw
+    - xform/([' ])r([a-z])/\1ng\2/  # ^r => ng
+    - xform/([' ])y([a-z])/\1gw\2/  # ^y => gw
+    - xform/([' ])x([a-z])/\1kw\2/  # ^x => kw
     - xform/([a-z])y/\1yu/       #  y => yu
     - xform/([a-z])b/\1ng/       # b$ => ng
   comment_format:
