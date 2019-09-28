@@ -28,9 +28,9 @@
 
 ## 依賴
 
+* [粵拼](https://github.com/rime/rime-jyutping)：粵音字、詞庫
 * [倉頡五代](https://github.com/rime/rime-cangjie)：倉頡反查
 * [朙月拼音](https://github.com/rime/rime-luna-pinyin)：拼音反查
-* [地球粵拼](https://github.com/redchenjs/rime-terra-jyutping)：粵音字、詞庫
 
 ## 安裝
 
