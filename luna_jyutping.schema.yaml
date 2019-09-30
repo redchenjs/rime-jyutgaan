@@ -66,14 +66,15 @@ speller:
   delimiter: " '"
   algebra:
     - xform/^ng([a-z])/r\1/      # ^ng => r
-    - xform/^gw/y/               # ^gw => y
-    - xform/^kw/x/               # ^kw => x
-    - xform/([a-z])aa/\1q/       #  aa => q
-    - xform/aa([a-z])/q\1/       #  aa => q
-    - xform/oe/v/                #  oe => v
-    - xform/eo/v/                #  eo => v
-    - xform/([a-z])yu/\1y/       #  yu => y
-    - xform/([a-z])ng/\1b/       # ng$ => b
+    - xform/^gw([a-z])/y\1/      # ^gw => y
+    - xform/^kw([a-z])/x\1/      # ^kw => x
+    - xform/([a-z])aa/\1q/       # *aa => q
+    - xform/([a-z])oe/\1v/       # *oe => v
+    - xform/aa([a-z])/q\1/       # aa* => q
+    - xform/oe([a-z])/v\1/       # oe* => v
+    - xform/eo([int])/v\1/       # eo+ => v
+    - xform/([a-z])yu/\1y/       # *yu => y
+    - xform/([a-z])ng/\1b/       # *ng => b
     - abbrev/^([a-z]).+$/\1/     # 首字母簡拼
 
 translator:
@@ -81,18 +82,19 @@ translator:
   prism: luna_jyutping
   spelling_hints: 5
   preedit_format:
-    - xform/([a-z])q/\1aa/       #  q => aa
-    - xform/q([a-z])/aa\1/       # ^q => aa
-    - xform/v([a-z])/oe\1/       # ^v => oe
-    - xform/oe([int])/eo\1/      # oe => eo
     - xform/^r([a-z])/ng\1/      # ^r => ng
     - xform/^y([a-z])/gw\1/      # ^y => gw
     - xform/^x([a-z])/kw\1/      # ^x => kw
-    - xform/([' ])r([a-z])/\1ng\2/  # ^r => ng
-    - xform/([' ])y([a-z])/\1gw\2/  # ^y => gw
-    - xform/([' ])x([a-z])/\1kw\2/  # ^x => kw
-    - xform/([a-z])y/\1yu/       #  y => yu
-    - xform/([a-z])b/\1ng/       # b$ => ng
+    - xform/([' ])r([a-z])/\1ng\2/  # 'r => ng
+    - xform/([' ])y([a-z])/\1gw\2/  # 'y => gw
+    - xform/([' ])x([a-z])/\1kw\2/  # 'x => kw
+    - xform/([a-z])q/\1aa/       # *q => aa
+    - xform/([a-z])v/\1oe/       # *v => oe
+    - xform/q([a-z])/aa\1/       # q* => aa
+    - xform/v([a-z])/oe\1/       # v* => oe
+    - xform/oe([int])/eo\1/      # oe => eo
+    - xform/([a-z])y/\1yu/       # *y => yu
+    - xform/([a-z])b/\1ng/       # *b => ng
 
 pinyin:
   tag: pinyin
