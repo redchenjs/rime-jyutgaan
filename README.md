@@ -1,6 +1,6 @@
-# 朙月粵拼
+# 粵簡
 
-配方： ℞ **redchenjs/rime-luna-jyutping**
+配方： ℞ **redchenjs/rime-jyutgaan**
 
 [Rime](https://rime.im) 粵拼輸入方案（簡拼）
 
@@ -35,7 +35,7 @@
 
 [東風破](https://github.com/rime/plum) 安裝口令：
 ```
-bash rime-install redchenjs/rime-luna-jyutping
+bash rime-install redchenjs/rime-jyutgaan
 ```
 
 授權條款：見 [LICENSE](LICENSE)

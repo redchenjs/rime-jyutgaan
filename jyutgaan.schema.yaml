@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: luna_jyutping
-  name: 朙月粵拼
+  schema_id: jyutgaan
+  name: 粵簡
   version: "1.3"
   author:
     - Jack Chen <redchenjs@live.com>
@@ -79,7 +79,7 @@ speller:
 
 translator:
   dictionary: jyutping
-  prism: luna_jyutping
+  prism: jyutgaan
   spelling_hints: 5
   preedit_format:
     - xform/^r([a-z])/ng\1/      # ^r => ng
@@ -103,7 +103,7 @@ pinyin:
   prefix: "`"
   suffix: "'"
   tips: 〔拼音〕
-  closing_tips: 〔粵拼〕
+  closing_tips: 〔粵簡〕
   preedit_format:
     - xform/([nl])v/$1ü/
     - xform/([nl])ue/$1üe/
@@ -116,7 +116,7 @@ cangjie:
   prefix: "~"
   suffix: "'"
   tips: 〔倉頡〕
-  closing_tips: 〔粵拼〕
+  closing_tips: 〔粵簡〕
   preedit_format:
     - xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|
 
