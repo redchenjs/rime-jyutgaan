@@ -3,13 +3,13 @@
 
 schema:
   schema_id: jyutgaan
-  name: 粵簡
-  version: "1.3"
+  name: 粵語簡拼
+  version: "2020.08.11"
   author:
     - Jack Chen <redchenjs@live.com>
   description: |
     採用香港語言學會粵語拼音方案
-    http://www.lshk.org/cantonese.php
+    https://www.jyutping.org/jyutping/
     ----------簡拼規則----------
     聲母  ng  gw  kw
     按鍵   r   y   x
@@ -18,9 +18,8 @@ schema:
     韻尾  ng
     按鍵   b
   dependencies:
-    - jyutping
-    - cangjie5
     - luna_pinyin
+    - jyut6ping3
 
 switches:
   - name: ascii_mode
@@ -47,85 +46,59 @@ engine:
     - ascii_segmentor
     - matcher
     - abc_segmentor
-    - affix_segmentor@pinyin
-    - affix_segmentor@cangjie
     - punct_segmentor
     - fallback_segmentor
   translators:
     - punct_translator
+    - reverse_lookup_translator
     - script_translator
-    - script_translator@pinyin
-    - script_translator@cangjie
   filters:
     - simplifier
     - uniquifier
-    - reverse_lookup_filter@reverse_lookup
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
   delimiter: " '"
   algebra:
-    - xform/^ng([a-z])/r\1/      # ^ng => r
-    - xform/^gw([a-z])/y\1/      # ^gw => y
-    - xform/^kw([a-z])/x\1/      # ^kw => x
-    - xform/([a-z])aa/\1q/       # *aa => q
-    - xform/([a-z])oe/\1v/       # *oe => v
-    - xform/aa([a-z])/q\1/       # aa* => q
-    - xform/oe([a-z])/v\1/       # oe* => v
-    - xform/eo([int])/v\1/       # eo+ => v
-    - xform/([a-z])yu/\1y/       # *yu => y
-    - xform/([a-z])ng/\1b/       # *ng => b
-    - abbrev/^([a-z]).+$/\1/     # 首字母簡拼
+    - xform/([a-z])[0-9]$/$1/    # 忽略聲調
+    - xform/^ng([a-z])/r$1/      # ^ng => r
+    - xform/^gw([a-z])/y$1/      # ^gw => y
+    - xform/^kw([a-z])/x$1/      # ^kw => x
+    - xform/([a-z])aa/$1q/       # *aa => q
+    - xform/([a-z])oe/$1v/       # *oe => v
+    - xform/aa([a-z])/q$1/       # aa* => q
+    - xform/oe([a-z])/v$1/       # oe* => v
+    - xform/eo([int])/v$1/       # eo+ => v
+    - xform/([a-z])yu/$1y/       # *yu => y
+    - xform/([a-z])ng$/$1b/      # *ng => b
+    - abbrev/^([a-z]).+$/$1/     # 首字母簡拼
 
 translator:
-  dictionary: jyutping
+  dictionary: jyut6ping3
   prism: jyutgaan
-  spelling_hints: 5
+  spelling_hints: 8
   preedit_format:
-    - xform/^r([a-z])/ng\1/      # ^r => ng
-    - xform/^y([a-z])/gw\1/      # ^y => gw
-    - xform/^x([a-z])/kw\1/      # ^x => kw
-    - xform/([' ])r([a-z])/\1ng\2/  # 'r => ng
-    - xform/([' ])y([a-z])/\1gw\2/  # 'y => gw
-    - xform/([' ])x([a-z])/\1kw\2/  # 'x => kw
-    - xform/([a-z])q/\1aa/       # *q => aa
-    - xform/([a-z])v/\1oe/       # *v => oe
-    - xform/q([a-z])/aa\1/       # q* => aa
-    - xform/v([a-z])/oe\1/       # v* => oe
-    - xform/oe([int])/eo\1/      # oe => eo
-    - xform/([a-z])y/\1yu/       # *y => yu
-    - xform/([a-z])b/\1ng/       # *b => ng
+    - xform/(^|[ '])r([a-z])/$1ng$2/  # ^r => ng
+    - xform/(^|[ '])y([a-z])/$1gw$2/  # ^y => gw
+    - xform/(^|[ '])x([a-z])/$1kw$2/  # ^x => kw
+    - xform/([a-z])q/$1aa/       # *q => aa
+    - xform/([a-z])v/$1oe/       # *v => oe
+    - xform/q([a-z])/aa$1/       # q* => aa
+    - xform/v([a-z])/oe$1/       # v* => oe
+    - xform/oe([int])/eo$1/      # oe => eo
+    - xform/([a-z])y/$1yu/       # *y => yu
+    - xform/([a-z])b/$1ng/       # *b => ng
 
-pinyin:
-  tag: pinyin
+reverse_lookup:
   dictionary: luna_pinyin
-  enable_user_dict: false
   prefix: "`"
   suffix: "'"
   tips: 〔拼音〕
-  closing_tips: 〔粵簡〕
   preedit_format:
-    - xform/([nl])v/$1ü/
-    - xform/([nl])ue/$1üe/
-    - xform/([jqxy])v/$1u/
-
-cangjie:
-  tag: cangjie
-  dictionary: cangjie5
-  enable_user_dict: false
-  prefix: "~"
-  suffix: "'"
-  tips: 〔倉頡〕
-  closing_tips: 〔粵簡〕
-  preedit_format:
-    - xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|
-
-reverse_lookup:
-  tags: [ pinyin, cangjie ]
-  dictionary: jyutping
+    - xform/([nljqxy])v/$1ü/
 
 punctuator:
-  import_preset: symbols
+  import_preset: default
 
 key_binder:
   import_preset: default
@@ -133,6 +106,4 @@ key_binder:
 recognizer:
   import_preset: default
   patterns:
-    punct: '^/([0-9]0?|[A-Za-z]+)$'
-    pinyin: "`[a-z]*'?$"
-    cangjie: "~[a-z]*'?$"
+    reverse_lookup: "`[a-z]*'?$"

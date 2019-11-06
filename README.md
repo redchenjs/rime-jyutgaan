@@ -1,8 +1,10 @@
-# 粵簡
+# 粵語簡拼
 
 配方： ℞ **redchenjs/rime-jyutgaan**
 
-[Rime](https://rime.im) 粵拼輸入方案（簡拼）
+AUR： [rime-jyutgaan](https://aur.archlinux.org/packages/rime-jyutgaan)
+
+[Rime](https://rime.im) 粵語簡拼輸入方案
 
 [香港語言學會粵語拼音方案](https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E8%AA%9E%E8%A8%80%E5%AD%B8%E5%AD%B8%E6%9C%83%E7%B2%B5%E8%AA%9E%E6%8B%BC%E9%9F%B3%E6%96%B9%E6%A1%88)
 
@@ -23,12 +25,11 @@
 註：
 * 輸入時將對應音節依照上述規則進行替換即可（單獨的aa，oe，ng，m音節直接輸入，不使用簡拼），其餘音節輸入方法與原粵拼方案無異。
 * 本方案支持首字母簡拼及完整拼音提示（僅供參考，多音字註音可能有誤），不支持聲調輸入。
-* 本方案可用漢語拼音（使用"\`"鍵）或倉頡碼（使用"~"鍵）來反查字音。
+* 本方案可用漢語拼音（使用“\`”鍵）來反查字音。
 
 ## 依賴
 
-* [粵拼](https://github.com/rime/rime-jyutping)：粵音字、詞庫
-* [倉頡五代](https://github.com/rime/rime-cangjie)：倉頡反查
+* [粵語拼音](https://github.com/rime/rime-cantonese)：粵音字、詞庫
 * [朙月拼音](https://github.com/rime/rime-luna-pinyin)：拼音反查
 
 ## 安裝
